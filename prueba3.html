@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Meraki Nair Spa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wdth,wght@0,5..1200,87.5..112.5,300..900;1,5..1200,87.5..112.5,300..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales del cuerpo de la página */
+        body {
+            font-family: "Playfair", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fce4ec; /* Tono rosa muy claro de fondo */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 95%;
+        }
+        /* Estilos para el encabezado */
+        header {
+            background-color: #e05f80; /* Tono rosa más intenso para el encabezado */
+            height: 150px;
+        }
+        .navegacion-principal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 200px;
+        }
+
+        /* Estilos para el logo */
+        .logo img {
+            height: auto; /* Ajusta el tamaño del logo según necesites */
+            width: 200px;  
+        }
+
+        /* Estilos para la navegación */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            font-size: 1.5rem;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8bbd0; /* Tono rosa más claro al pasar el ratón */
+        }
+
+        /* Estilos para la sección Hero */
+        .hero {
+            background-image: url('ruta/a/tu/imagen-hero.jpg'); /* Reemplaza con la ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el botón de llamada a la acción con animación */
+        .hero .cta-button {
+            background-color: #ff4081; /* Otro tono de rosa para el botón */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animación de movimiento para el botón de CTA */
+        .hero .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease-in-out;
+        }
+
+        .hero .cta-button:hover::before {
+            left: 120%;
+        }
+
+        .hero .cta-button:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sutil sombra al pasar el ratón */
+        }
+
+        /* Estilos para la sección de Servicios */
+        .servicios {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .servicios h2 {
+            font-size: 2rem;
+            color: #e91e63;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos para la cuadrícula de servicios */
+        .servicio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Estilos para cada servicio */
+        .servicio {
+            background-color: #f8bbd0; /* Tono rosa claro para las tarjetas de servicio */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .servicio img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .servicio h3 {
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+
+        .servicio p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para el botón de agendar */
+        .servicio .agendar-button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .servicio .agendar-button:hover {
+            background-color: #f06292; /* Tono rosa más oscuro al pasar el ratón */
+        }
+
+        /* Estilos para la sección de la Galería */
+        .galeria {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fce4ec; /* Tono rosa muy claro para el fondo de la galería */
+        }
+
+        .galeria h2 {
+            font-size: 2rem;
+            color: #e91e63;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos para la cuadrícula de la galería */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .galeria-grid img {
+            width: 100%;
+            height: 300px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos para la sección de Contacto */
+        .contacto {
+            padding: 40px 20px;
+            background-color: white;
+        }
+
+        .contacto h2 {
+            font-size: 2rem;
+            color: #e91e63;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Estilos para el contenedor del mapa y el formulario */
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Estilos para el mapa */
+        .contacto-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        /* Estilos para el formulario de contacto */
+        .formulario {
+            padding: 20px;
+            background-color: #f8bbd0; /* Tono rosa claro para el formulario */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .formulario input[type="text"],
+        .formulario input[type="email"],
+        .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .formulario button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .formulario button:hover {
+            background-color: #f06292;
+        }
+
+        /* Estilos para la sección de redes sociales */
+        .redes-sociales {
+            background-color: #fce4ec; /* Tono rosa muy claro para el fondo de redes sociales */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .redes-sociales a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #e91e63;
+            font-size: 24px; /* Ajusta el tamaño de los iconos */
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .redes-sociales a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos para el botón de subir al inicio con animación */
+        .subir-inicio {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px; /* Ajusta el tamaño del icono */
+            height: 50px;
+            background-image: url('ruta/a/tu/hello-kitty-icono.png'); /* Reemplaza con la ruta de tu icono de Hello Kitty */
+            background-size: cover;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            animation: flotarHelloKitty 1.5s ease-in-out infinite alternate; /* Animación de flotar */
+            text-indent: -9999px; /* Oculta el texto alternativo */
+            overflow: hidden; /* Asegura que no se muestre texto */
+        }
+
+        .subir-inicio:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animación de flotar para Hello Kitty */
+        @keyframes flotarHelloKitty {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #e91e63; /* Tono rosa intenso para el pie de página */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Media query para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="navegacion-principal">
+                <div class="logo">
+                    <img src="img/logo.png" alt="logoMeraki Nair Spa">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#empresa">Empresa</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <h1>Siente la armonía y el cuidado que mereces en Florida Meraki Nair Spa</h1>
+            <a href="https://wa.me/573007211998?text=Hola,%20me%20gustaría%20pedir%20una%20cita." class="cta-button">Pide Cita</a>
+        </section>
+
+        <section id="servicios" class="servicios">
+            <h2>Nuestros Servicios Exclusivos</h2>
+            <div class="servicio-grid">
+                <div class="servicio">
+                    <img src="ruta/a/tu/servicio1.jpg" alt="Manicura y Pedicura de Lujo">
+                    <h3>Manicura y Pedicura de Lujo</h3>
+                    <p>Disfruta de un tratamiento completo para tus manos y pies con productos de alta calidad y técnicas relajantes.</p>
+                    <a href="https://wa.me/573007211998?text=Hola,%20me%20interesa%20agendar%20una%20manicura%20y%20pedicura%20de%20lujo." class="agendar-button">Agendar Ahora</a>
+                </div>
+                <div class="servicio">
+                    <img src="ruta/a/tu/servicio2.jpg" alt="Masajes Terapéuticos Personalizados">
+                    <h3>Masajes Terapéuticos Personalizados</h3>
+                    <p>Alivia dolores musculares, reduce el estrés y mejora tu circulación con nuestros masajes diseñados para tus necesidades.</p>
+                    <a href="https://wa.me/573007211998?text=Hola,%20me%20interesa%20agendar%20un%20masaje%20terapéutico." class="agendar-button">Agendar Ahora</a>
+                </div>
+                <div class="servicio">
+                    <img src="ruta/a/tu/servicio3.jpg" alt="Tratamientos Faciales Rejuvenecedores">
+                    <h3>Tratamientos Faciales Rejuvenecedores</h3>
+                    <p>Revitaliza tu piel con nuestros tratamientos faciales que combinan limpieza profunda, hidratación y técnicas anti-edad.</p>
+                    <a href="https://wa.me/573007211998?text=Hola,%20me%20interesa%20agendar%20un%20tratamiento%20facial." class="agendar-button">Agendar Ahora</a>
+                </div>
+                <div class="servicio">
+                    <img src="ruta/a/tu/servicio4.jpg" alt="Depilación Profesional con Cera y Láser">
+                    <h3>Depilación Profesional con Cera y Láser</h3>
+                    <p>Obtén una piel suave y sin vello con nuestras opciones de depilación duraderas y seguras.</p>
+                    <a href="https://wa.me/573007211998?text=Hola,%20me%20interesa%20agendar%20un%20servicio%20de%20depilación." class="agendar-button">Agendar Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="galeria contenedor">
+            <h2>Nuestra Galería de Experiencias</h2>
+            <div class="galeria-grid">
+                <img src="img/press on2.jpeg" alt="Imagen Galería 1">
+                <img src="img/basicas.jpeg" alt="Imagen Galería 2">
+                <img src="img/press on.jpeg" alt="Imagen Galería 3">
+                <img src="img/press on2.jpeg" alt="Imagen Galería 4">
+                <img src="img/Semi.jpeg" alt="Imagen Galería 5">
+                <img src="img/uñas1.jpeg" alt="Imagen Galería 6">
+                <img src="img/uñas 2.jpeg" alt="Imagen Galería 7">
+                <img src="img/uñas3.jpeg" alt="Imagen Galería 8">
+                <img src="img/basicas.jpeg" alt="Imagen Galería 9">
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <h2>Visítanos y Transforma tu Bienestar</h2>
+            <div class="contacto-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1778088938994!2d-75.6119283242834!3d6.174787793833797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4682583991a1a1%3A0x7b8d3808440b10e7!2sSabaneta%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1715292628788!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="formulario">
+                    <h3>Contáctanos</h3>
+                    <form>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="redes-sociales">
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook" style="animation: flotarRedes 1.2s ease-in-out infinite alternate;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram" style="animation: flotarRedes 1.4s ease-in-out infinite alternate;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" title="TikTok" style="animation: flotarRedes 1.6s ease-in-out infinite alternate;"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" title="YouTube" style="animation: flotarRedes 1.8s ease-in-out infinite alternate;"><i class="fab fa-youtube"></i></a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Florida Meraki Nair Spa. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="#" class="subir-inicio">
+        <img src="ruta/a/tu/hello-kitty-icono.png" alt="Subir al inicio" style="width: 50px; height: 50px; border-radius: 50%; animation: flotarHelloKitty 1.5s ease-in-out infinite alternate;">
+    </a>
+
+    <script>
+        // Script para el botón de subir con Hello Kitty (scroll suave)
+        const subirInicio = document.querySelector('.subir-inicio');
+
+        subirInicio.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
